@@ -29,4 +29,7 @@ func init() {
 	beego.AddNamespace(ns)
 	beego.Router("/my",&controllers.MyController{})
 	beego.AutoRouter(&controllers.MyController{})
+	//beego.AutoRouter(&controllers.PersonController{})
+	beego.Router("/person",&controllers.PersonController{},"get:Index")
+	beego.Router("/person/:id",&controllers.PersonController{},"get:Get")
 }
