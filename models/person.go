@@ -9,8 +9,8 @@ import (
 type Person struct {
 	base
 	Name   string `orm:"size(50)"`
-	Age    int    `orm:"int(4)"`
-	Gender int    `orm:"int(1)"`
+	Age    uint8
+	Gender uint8
 }
 
 

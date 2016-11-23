@@ -26,7 +26,7 @@ func (this *PersonDao) GetById(id int64) ( models.Person, error ) {
 func (this *PersonDao) GetAll()([] *models.Person) {
 	var persons []*models.Person
 	o := orm.NewOrm()
-	_,err := o.QueryTable("person").All(&persons)
+	_,err := o.QueryTable("person").All(&persons,"name","age")
 	if err !=nil {
 		logs.Info("Query Persion Failed : ",err.Error())
 	}

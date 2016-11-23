@@ -25,7 +25,7 @@ func main1() {
 	} else {
 		fmt.Println("ID:", id, "inserted")
 	}
-	cnt,e := o.Delete(&p)
+	/*cnt,e := o.Delete(&p)
 	if e != nil {
 		fmt.Println("Error:", e.Error())
 	}else{
@@ -40,6 +40,6 @@ func main1() {
 	}else{
 		fmt.Println("Record:",p1)
 	}
-
+	*/
 
 }
