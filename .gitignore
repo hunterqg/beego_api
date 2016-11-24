@@ -1,4 +1,5 @@
 beego_api
+beego_api.exe
 *.iml
 .idea
 *.tmp

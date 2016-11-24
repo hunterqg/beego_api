@@ -7,7 +7,7 @@ import (
 )
 
 type Person struct {
-	base
+	Base
 	Name   string `orm:"size(50)"`
 	Age    uint8
 	Gender uint8
