@@ -3,8 +3,8 @@ package main
 import (
 	//"beego_api/models"
 	_ "beego_api/utils"
-	"github.com/astaxie/beego/orm"
 	"fmt"
+	"github.com/astaxie/beego/orm"
 	//"time"
 	"beego_api/models"
 	"time"
