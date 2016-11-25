@@ -10,8 +10,9 @@ import (
 )
 type PersonDao struct {}
 
+var o = orm.NewOrm()
 
-func (this *PersonDao) GetById(id int64) ( models.Person, error ) {
+func ( *PersonDao) GetById(id int64) ( models.Person, error ) {
 	logs.Debug("start get person by id...")
 	key := generateKey(id)
 	p := models.Person{}
@@ -20,7 +21,6 @@ func (this *PersonDao) GetById(id int64) ( models.Person, error ) {
 		p = utils.Cache.Get(key).(models.Person)
 		return p , nil
 	}
-	o := orm.NewOrm()
 	p.Id = id
 
 	error := o.Read(&p)
@@ -33,15 +33,24 @@ func (this *PersonDao) GetById(id int64) ( models.Person, error ) {
 
 }
 
-func (this *PersonDao) GetAll()([] *models.Person) {
+func ( *PersonDao) GetAll()([] *models.Person) {
 	var persons []*models.Person
-	o := orm.NewOrm()
-	_,err := o.QueryTable("person").All(&persons)
+	_,err := o.QueryTable("person").Limit(50,100).All(&persons)
 	if err !=nil {
 		logs.Info("Query Persion Failed : ",err.Error())
 	}
 	return persons
 
+}
+
+func ( *PersonDao)AddOne(p *models.Person) (int64,error) {
+	return o.Insert(p)
+}
+
+func (*PersonDao) DeleteById(id int64) (int64,error){
+	p := models.Person{}
+	p.Id = id
+	return o.Delete(&p)
 }
 
 func generateKey(id int64) string {

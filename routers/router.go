@@ -32,4 +32,6 @@ func init() {
 	//beego.AutoRouter(&controllers.PersonController{})
 	beego.Router("/person",&controllers.PersonController{},"get:Index")
 	beego.Router("/person/:id",&controllers.PersonController{},"get:Get")
+	beego.Router("/person/:id",&controllers.PersonController{},"delete:Delete")
+	beego.Router("/person",&controllers.PersonController{},"post:Post")
 }

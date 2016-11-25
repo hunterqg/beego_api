@@ -7,6 +7,6 @@ import (
 var Cache cache.Cache
 
 func init() {
-	logs.Info("Init db connection ...")
+	logs.Info("Init db cache ...")
 	Cache,_ = cache.NewCache("memory",`interval:60`)
 }

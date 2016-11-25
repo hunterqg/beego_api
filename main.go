@@ -9,6 +9,7 @@ import (
 
 func init() {
 	logs.Info("api is starting ...")
+	/*
 	logs.Info("Conf:", beego.BConfig)
 	logs.Info("mysql:", beego.AppConfig.String("dev::mysql_user"),
 		beego.AppConfig.String("dev::mysql_passwd"),
@@ -19,6 +20,7 @@ func init() {
 
 		logs.Info(len(ary), x)
 	}
+	*/
 	//beego.SetLevel(beego.LevelInformational)
 
 }
