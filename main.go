@@ -10,16 +10,16 @@ import (
 func init() {
 	logs.Info("api is starting ...")
 	/*
-	logs.Info("Conf:", beego.BConfig)
-	logs.Info("mysql:", beego.AppConfig.String("dev::mysql_user"),
-		beego.AppConfig.String("dev::mysql_passwd"),
-		beego.AppConfig.String("dev::mysql_dbName"),
-	)
-	ary := beego.AppConfig.Strings("ary_test")
-	for _, x := range ary {
+		logs.Info("Conf:", beego.BConfig)
+		logs.Info("mysql:", beego.AppConfig.String("dev::mysql_user"),
+			beego.AppConfig.String("dev::mysql_passwd"),
+			beego.AppConfig.String("dev::mysql_dbName"),
+		)
+		ary := beego.AppConfig.Strings("ary_test")
+		for _, x := range ary {
 
-		logs.Info(len(ary), x)
-	}
+			logs.Info(len(ary), x)
+		}
 	*/
 	//beego.SetLevel(beego.LevelInformational)
 

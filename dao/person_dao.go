@@ -35,7 +35,7 @@ func ( *PersonDao) GetById(id int64) ( models.Person, error ) {
 
 func ( *PersonDao) GetAll()([] *models.Person) {
 	var persons []*models.Person
-	_,err := o.QueryTable("person").Limit(50,100).All(&persons)
+	_,err := o.QueryTable("person")/*.Limit(50,100)*/.All(&persons)
 	if err !=nil {
 		logs.Info("Query Persion Failed : ",err.Error())
 	}
